@@ -19,6 +19,7 @@ final class ViewController: UIViewController {
     private let titleLabel = UILabel()
     private let textField = UITextField()
     private let label = UILabel()
+    private let button = UIButton()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,6 +32,12 @@ final class ViewController: UIViewController {
     }
     
     private func setAction() {
+        button.rx.tap
+            .subscribe(onNext: { [self] in
+                print("\(textField.text ?? "")")
+            })
+            .disposed(by: disposeBag)
+        
         textField.rx.text
             .bind(to: label.rx.text)
             .disposed(by: disposeBag)
@@ -59,11 +66,18 @@ private extension ViewController {
         label.do {
             $0.font = .systemFont(ofSize: 16, weight: .medium)
         }
+        
+        button.do {
+            $0.setTitle("입력 완료", for: .normal)
+            $0.titleLabel?.font = .systemFont(ofSize: 18, weight: .semibold)
+            $0.backgroundColor = .black
+            $0.layer.cornerRadius = 16
+        }
     }
     
     func setUI() {
         view.backgroundColor = .white
-        view.addSubviews(titleLabel, textField, label)
+        view.addSubviews(titleLabel, textField, label, button)
     }
     
     func setLayout() {
@@ -81,6 +95,12 @@ private extension ViewController {
         label.snp.makeConstraints {
             $0.top.equalTo(textField.snp.bottom).offset(16)
             $0.centerX.equalToSuperview()
+        }
+        
+        button.snp.makeConstraints {
+            $0.bottom.equalToSuperview().offset(-40)
+            $0.leading.trailing.equalToSuperview().inset(20)
+            $0.height.equalTo(60)
         }
     }
 }
