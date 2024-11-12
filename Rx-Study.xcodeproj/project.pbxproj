@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A36347B62CD807EE003B5322 /* UIView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = A36347B52CD807EE003B5322 /* UIView+.swift */; };
 		A3E82F842CD7DB900070DDC8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3E82F832CD7DB900070DDC8 /* AppDelegate.swift */; };
 		A3E82F862CD7DB900070DDC8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3E82F852CD7DB900070DDC8 /* SceneDelegate.swift */; };
 		A3E82F882CD7DB900070DDC8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3E82F872CD7DB900070DDC8 /* ViewController.swift */; };
@@ -19,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A36347B52CD807EE003B5322 /* UIView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+.swift"; sourceTree = "<group>"; };
 		A3E82F802CD7DB900070DDC8 /* Rx-Study.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Rx-Study.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A3E82F832CD7DB900070DDC8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A3E82F852CD7DB900070DDC8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -43,6 +45,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A36347B42CD807E1003B5322 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				A36347B52CD807EE003B5322 /* UIView+.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
 		A3E82F772CD7DB900070DDC8 = {
 			isa = PBXGroup;
 			children = (
@@ -81,6 +91,7 @@
 		A3E82F982CD7DCB40070DDC8 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				A36347B42CD807E1003B5322 /* Extension */,
 				A3E82F892CD7DB900070DDC8 /* Main.storyboard */,
 				A3E82F8E2CD7DB930070DDC8 /* LaunchScreen.storyboard */,
 				A3E82F8C2CD7DB930070DDC8 /* Assets.xcassets */,
@@ -178,6 +189,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A36347B62CD807EE003B5322 /* UIView+.swift in Sources */,
 				A3E82F882CD7DB900070DDC8 /* ViewController.swift in Sources */,
 				A3E82F842CD7DB900070DDC8 /* AppDelegate.swift in Sources */,
 				A3E82F862CD7DB900070DDC8 /* SceneDelegate.swift in Sources */,
@@ -334,7 +346,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = U4M8QWP7V2;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "Rx-Study/Info.plist";
+				INFOPLIST_FILE = "Rx-Study/Resource/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -362,7 +374,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = U4M8QWP7V2;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "Rx-Study/Info.plist";
+				INFOPLIST_FILE = "Rx-Study/Resource/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
