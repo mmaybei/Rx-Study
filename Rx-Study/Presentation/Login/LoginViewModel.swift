@@ -50,7 +50,7 @@ extension LoginViewModel: ViewModelType {
         let loginButtonIsEnabled = Observable.combineLatest(idIsValid, passwordIsValid) { $0 && $1 }
         
         let isSucceed = input.loginButtonDidTap
-            .map{ self.id == "suyeon" && self.password == "suyeon" }
+            .map { self.id == "suyeon" && self.password == "suyeon" }
         
         return Output(
             idIsValid: idIsValid,

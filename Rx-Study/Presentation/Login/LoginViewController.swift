@@ -26,7 +26,6 @@ final class LoginViewController: UIViewController {
         super.viewDidLoad()
         
         bindViewModel()
-        setGesture()
     }
     
     private func bindViewModel() {
@@ -39,17 +38,20 @@ final class LoginViewController: UIViewController {
         let output = viewModel.transform(input: input, disposeBag: disposeBag)
         
         output.idIsValid
-            .map{ $0 ? .black : .systemGray }
+            .map { $0 ? .black : .systemGray }
             .bind(to: rootView.idTextField.rx.textColor)
             .disposed(by: disposeBag)
         
         output.passwordIsValid
-            .map{ $0 ? .black : .systemGray }
+            .map { $0 ? .black : .systemGray }
             .bind(to: rootView.passwordTextField.rx.textColor)
             .disposed(by: disposeBag)
         
         output.loginButtonIsEnabled
-            .bind(to: rootView.loginButton.rx.isEnabled)
+            .subscribe(onNext: { [weak self] isEnabled in
+                self?.rootView.loginButton.isEnabled = isEnabled
+                self?.rootView.loginButton.backgroundColor = isEnabled ? .systemBlue : .systemGray
+            })
             .disposed(by: disposeBag)
         
         output.isSucceed
@@ -67,18 +69,5 @@ final class LoginViewController: UIViewController {
         
         alert.addAction(action)
         present(alert, animated: true)
-    }
-    
-    private func setGesture() {
-        let tapGesture = UITapGestureRecognizer(
-            target: self,
-            action: #selector(dismissKeyboard)
-        )
-        view.addGestureRecognizer(tapGesture)
-    }
-    
-    @objc
-    private func dismissKeyboard() {
-        view.endEditing(true)
     }
 }
