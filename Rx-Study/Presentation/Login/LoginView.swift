@@ -23,7 +23,7 @@ final class LoginView: UIView {
     let passwordTextField = CustomTextField(placeholder: "비밀번호").then {
         $0.keyboardType = .asciiCapable
         $0.autocapitalizationType = .none
-        $0.isSecureTextEntry = true
+//        $0.isSecureTextEntry = true
     }
     
     let errorLabel = UILabel().then {
@@ -36,6 +36,7 @@ final class LoginView: UIView {
         $0.titleLabel?.font = .systemFont(ofSize: 16, weight: .semibold)
         $0.backgroundColor = .systemBlue
         $0.layer.cornerRadius = 4
+        $0.isEnabled = false
     }
     
     private let registerButton = UIButton().then {
