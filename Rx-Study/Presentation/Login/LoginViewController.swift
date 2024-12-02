@@ -19,7 +19,7 @@ final class LoginViewController: UIViewController {
     private let disposeBag = DisposeBag()
     
     override func loadView() {
-        self.view = rootView
+        view = rootView
     }
     
     override func viewDidLoad() {
@@ -31,7 +31,7 @@ final class LoginViewController: UIViewController {
     private func bindViewModel() {
         let input = LoginViewModel.Input(
             idText: rootView.idTextField.rx.text.orEmpty.asObservable(),
-            passwordText: rootView.passwordTextField.rx.text.orEmpty.asObservable(), 
+            passwordText: rootView.passwordTextField.rx.text.orEmpty.asObservable(),
             loginButtonDidTap: rootView.loginButton.rx.tap.asObservable()
         )
         
